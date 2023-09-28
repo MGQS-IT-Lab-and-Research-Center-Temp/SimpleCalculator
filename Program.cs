@@ -70,33 +70,14 @@ double ConvertInputToNumeric(string stringInput)
 
 double CalculatorEngine(double argNumber1, double argNumber2, string argOperation)
 {
-    double result;
-
-    switch (argOperation.ToLower())
+    var result = argOperation.ToLower() switch
     {
-        case "add":
-        case "+":
-            result = argNumber1 + argNumber2;
-            break;
-        case "minus":
-        case "-":
-            result = argNumber1 - argNumber2;
-            break;
-        case "multiply":
-        case "*":
-            result = argNumber1 * argNumber2;
-            break;
-        case "divide":
-        case "/":
-            result = argNumber1 / argNumber2;
-            break;
-        case "modulo":
-        case "%":
-            result = argNumber1 % argNumber2;
-            break;
-        default:
-            throw new InvalidOperationException("Operator not recognized!");
-    }
-
+        "add" or "+" => argNumber1 + argNumber2,
+        "minus" or "-" => argNumber1 - argNumber2,
+        "multiply" or "*" => argNumber1 * argNumber2,
+        "divide" or "/" => argNumber1 / argNumber2,
+        "modulo" or "%" => argNumber1 % argNumber2,
+        _ => throw new InvalidOperationException("Operator not recognized!"),
+    };
     return result;
 }
