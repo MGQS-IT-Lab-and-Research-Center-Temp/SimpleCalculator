@@ -6,7 +6,7 @@
     3. Build the engine of the calculator that responds based on the operation to be performed
 */
 Console.Title = "=====Simple Calculator=====";
-Console.WriteLine("=====Simple Calculator=====");
+Console.WriteLine("=====Simple Calculator====="); 
 
 CalculatorInputAndOutPut();
 
@@ -28,18 +28,13 @@ void CalculatorInputAndOutPut()
             double secondInput = ConvertInputToNumeric(Console.ReadLine()!);
 
             var output = CalculatorEngine(firstInput, secondInput, arithmeticOperator);
-
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Result: {output}");
-            Console.ResetColor();
+            MessageWithColor($"Result: {output}", ConsoleColor.Green);
 
             string continueOption = string.Empty;
 
             do
             {
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.Write("Do you want to continue Y/N: ");
-                Console.ResetColor();
+                MessageWithColor("Do you want to continue Y/N: ", ConsoleColor.Cyan);
 
                 continueOption = Console.ReadLine()!;
 
@@ -52,9 +47,7 @@ void CalculatorInputAndOutPut()
     }
     catch (Exception ex)
     {
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("Error: {0}", ex.Message);
-        Console.ResetColor();
+        MessageWithColor($"Error: {ex.Message}");
     }
 }
 
@@ -62,7 +55,7 @@ double ConvertInputToNumeric(string stringInput)
 {
     if (!double.TryParse(stringInput, out double convertedNumber))
     {
-        throw new FormatException("Expected a numeric value!");
+        throw new FormatException("A numeric value is expected!!");
     }
 
     return convertedNumber;
@@ -70,6 +63,11 @@ double ConvertInputToNumeric(string stringInput)
 
 double CalculatorEngine(double argNumber1, double argNumber2, string argOperation)
 {
+    if (argOperation == "divide" || argOperation == "/" && argNumber2 == 0)
+    {
+        throw new DivideByZeroException("Cannot divide zero!");
+    }
+
     var result = argOperation.ToLower() switch
     {
         "add" or "+" => argNumber1 + argNumber2,
@@ -77,7 +75,15 @@ double CalculatorEngine(double argNumber1, double argNumber2, string argOperatio
         "multiply" or "*" => argNumber1 * argNumber2,
         "divide" or "/" => argNumber1 / argNumber2,
         "modulo" or "%" => argNumber1 % argNumber2,
-        _ => throw new InvalidOperationException("Operator not recognized!"),
+        _ => throw new InvalidOperationException("Operator not recognized!")
     };
+
     return result;
+}
+
+void MessageWithColor(string message, ConsoleColor consoleColor = ConsoleColor.Red)
+{
+    Console.ForegroundColor = consoleColor;
+    Console.WriteLine(message);
+    Console.ResetColor();
 }

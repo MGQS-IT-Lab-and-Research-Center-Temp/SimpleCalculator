@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Abbas Joda\\Desktop\\MyCsharpProjects\\SimpleCalculator\\SimpleCalculator.csproj": {}
+    "C:\\Users\\Abbas Joda\\Desktop\\MyCsharpProjects\\SimpleCalculator\\SimpleCalculator.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Abbas Joda\\Desktop\\MyCsharpProjects\\SimpleCalculator\\SimpleCalculator.csproj": {
+    "C:\\Users\\Abbas Joda\\Desktop\\MyCsharpProjects\\SimpleCalculator\\SimpleCalculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Abbas Joda\\Desktop\\MyCsharpProjects\\SimpleCalculator\\SimpleCalculator.csproj",
+        "projectUniqueName": "C:\\Users\\Abbas Joda\\Desktop\\MyCsharpProjects\\SimpleCalculator\\SimpleCalculator.csproj",
         "projectName": "SimpleCalculator",
-        "projectPath": "c:\\Users\\Abbas Joda\\Desktop\\MyCsharpProjects\\SimpleCalculator\\SimpleCalculator.csproj",
+        "projectPath": "C:\\Users\\Abbas Joda\\Desktop\\MyCsharpProjects\\SimpleCalculator\\SimpleCalculator.csproj",
         "packagesPath": "C:\\Users\\Abbas Joda\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Abbas Joda\\Desktop\\MyCsharpProjects\\SimpleCalculator\\obj\\",
+        "outputPath": "C:\\Users\\Abbas Joda\\Desktop\\MyCsharpProjects\\SimpleCalculator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Abbas Joda\\AppData\\Roaming\\NuGet\\NuGet.Config",
