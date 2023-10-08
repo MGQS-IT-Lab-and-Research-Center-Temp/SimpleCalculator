@@ -4,8 +4,9 @@
     2. Build a method that parses the input for the operands to number type (double)
     3. Build the engine of the calculator that responds based on the operation to be performed
 */
+
 Console.Title = "=====Simple Calculator=====";
-Console.WriteLine("=====Simple Calculator====="); 
+Console.WriteLine("=====Simple Calculator=====");
 
 CalculatorInputAndOutPut();
 
@@ -86,3 +87,4 @@ void MessageWithColor(string message, ConsoleColor consoleColor = ConsoleColor.R
     Console.WriteLine(message);
     Console.ResetColor();
 }
+
