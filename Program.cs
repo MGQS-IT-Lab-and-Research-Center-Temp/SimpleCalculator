@@ -1,5 +1,4 @@
 ﻿// TO DO
-
 /*
     1. Build a method for the calculator input
     2. Build a method that parses the input for the operands to number type (double)
